@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#jira-issueml-single {
+  top: 1rem;
+  left: 1rem;
+  width: calc(100% - 2rem);
+  position: absolute;
+  display: none;
+  background-color: whitesmoke;
+  border: 1px solid lightseagreen;
+}

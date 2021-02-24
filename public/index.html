@@ -25,19 +25,25 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
   </head>
   <body>
+    <h1>SPA</h1>
+    <div><button id="launch-button">Launch JQL</button></div>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <div id="jira-issueml-single"></div>
   </body>
+  <script>
+  $("#launch-button").on('click', () => {
+    console.debug('launch-button click');
+    $("#jira-issueml-single").css('display', 'block');
+    if (!window.renderedApp) {
+      window.renderApp(document.getElementById('jira-issueml-single'));
+      window.renderAppUnload = _ => {
+        $("#jira-issueml-single").css('display', 'none');
+      };
+    }
+    window.renderedApp.searchJiraIssues();
+  });
+  </script>
 </html>

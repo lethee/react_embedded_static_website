@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
 }
 
 .App-logo {
@@ -35,4 +34,13 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.App .Status {
+  height: 1.1rem;
+  width: auto;
+  overflow: hidden;
+}
+.App .Content {
+  min-height: 50vh;
 }
